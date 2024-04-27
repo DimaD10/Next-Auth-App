@@ -1,0 +1,160 @@
+@use "@/theme/index";
+
+.header {
+  font-size: 1.15rem;
+  padding: 2.25rem 0;
+  background-color: index.$lighter-grey;
+  color: index.$white;
+  box-shadow: rgba(50, 50, 93, 0.15) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.2) 0px 3px 7px -3px;
+  border-bottom: 2px solid index.$white-grey;
+
+  @media (max-width: 767.98px) {
+    padding: 1.375rem 0;
+    font-size: 1rem;
+  }
+}
+
+.wrapper {
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: 1fr auto 1fr;
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr auto auto;
+
+    gap: 1.5rem;
+  }
+
+  &.twoColumns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    grid-template-columns: none;
+
+    .navigation {
+        margin-left: auto;
+    }
+
+    .userActions {
+        display: none;
+    }
+  }
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+
+  a {
+    text-transform: capitalize;
+    position: relative;
+    display: inline-block;
+
+    transition: all ease 0.1s;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0px;
+      height: 2px;
+      background-color: index.$white;
+
+      transition: all ease 0.1s;
+    }
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &.active::after {
+      width: 20px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    gap: 1.5rem;
+  }
+}
+
+.userActions {
+  display: flex;
+  gap: 2rem;
+  margin-left: auto;
+  align-items: center;
+}
+
+.authLink {
+  display: inline-block;
+
+  transition: all ease 0.2s;
+
+  &:hover {
+    text-decoration: underline;
+    opacity: 0.7;
+  }
+
+  &:nth-child(1) {
+    margin-left: auto;
+  }
+
+  button {
+    font-size: 1.15rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    font-family: var(--font-manrope);
+    text-decoration: underline;
+    color: index.$red;
+    text-transform: capitalize;
+
+    @media (max-width: 767.98px) {
+      font-size: 1rem;
+    }
+  }
+}
+
+.logo {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-right: auto;
+
+  font-family: var(--font-pacifico);
+
+  @media (max-width: 767.98px) {
+    img {
+      width: 36px !important;
+      height: 36px !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    span {
+      display: none;
+    }
+  }
+
+  img {
+    flex-shrink: 0;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .header {
+    font-size: 1.15rem;
+    background-color: index.$grey;
+    color: index.$white;
+    border-bottom: 2px solid index.$lighter-grey;
+
+    @media (max-width: 767.98px) {
+      padding: 1.375rem 0;
+      font-size: 1rem;
+    }
+  }
+}

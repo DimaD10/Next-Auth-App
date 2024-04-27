@@ -1,0 +1,49 @@
+@use "@/theme/index";
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 999;
+  background-color: rgba(index.$dark, 0.8);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.body {
+  padding: 1.25rem 1rem;
+}
+
+.info {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.spin {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 3px solid index.$red;
+  border-right: 3px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+
+  position: fixed;
+  bottom: 35vh;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@keyframes rotation {
+  0% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}

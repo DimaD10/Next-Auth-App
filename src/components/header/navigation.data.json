@@ -1,0 +1,12 @@
+{
+    "points": [
+        {
+            "route": "/",
+            "routeName": "home"
+        },
+        {
+          "route": "/order",
+          "routeName": "order"
+        }
+    ]
+}

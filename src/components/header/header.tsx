@@ -7,12 +7,18 @@ import navData from "./navigation.data.json";
 import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { SignOutButton, useAuth } from "@clerk/nextjs";
+import { useClerk, useAuth } from "@clerk/nextjs";
 
 const LOGO_TEXT = "Auth App"
 
 export function Header() {
     const { userId } = useAuth();
+    const { signOut } = useClerk();
+
+    const refreshPage = async () => {
+        await signOut();
+        window.location.reload();
+    }
 
     return (
         <div className={clsx(styles.header, "header")}>
@@ -27,9 +33,9 @@ export function Header() {
                     <div className={styles.userActions}>
                         {userId && (
                             <span className={styles.authLink}>
-                                <SignOutButton>
+                                <button onClick={() => refreshPage()}>
                                     log out
-                                </SignOutButton>
+                                </button>
                             </span>
                         )}
                         
@@ -48,7 +54,7 @@ function Navigation() {
     return (
         <div className={styles.navigation}>
             {
-                data.map((el, index) => 
+                data.map(el => 
                     <Link 
                         href={el.route} 
                         key={el.routeName} 

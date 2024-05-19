@@ -8,7 +8,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 A simple web application using **Next.JS** to demonstrate my ability to work with **authorization** and **registration** and working with tools that offer libraries. 
 The application is fully adaptive for any screen resolution and for any client. 
 
-#### **Provided logic:**
+### **Provided logic:**
 
 1. Unauthorized users are not allowed to access the home page and order page. 
 2. Authorization is possible using Google or Microsoft account, as well as using user credentials (automatically when loading the page) and username with password.

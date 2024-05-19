@@ -30,7 +30,7 @@ The application is fully adaptive for any screen resolution and for any client.
 
 ---
 
-[**RESULT**](https://next-auth-app-eosin.vercel.app/)
+## [**RESULT**](https://next-auth-app-eosin.vercel.app/)
 
 
 ## Contact Me:

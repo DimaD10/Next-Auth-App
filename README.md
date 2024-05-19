@@ -25,7 +25,7 @@ The application is fully adaptive for any screen resolution and for any client.
 4. **Module CSS approach** for unique styles for each component and convenience in the context of class names.
 5. **Lucide Icons library** for quick access to user icons.
 6. **Clerk** for quick building and using auth forms.
-7. Nex.JS image and font **optimization features**.
+7. Next.JS image and font **optimization features**.
 8. **Vercel** for comfortable deployment.
 
 ---

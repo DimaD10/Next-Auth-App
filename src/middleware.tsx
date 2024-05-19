@@ -1,6 +1,10 @@
+import { NextRequest, NextFetchEvent, NextResponse } from "next/server";
 import { authMiddleware } from "@clerk/nextjs/server";
 
-const customAuthMiddleware = async (req, event) => {
+const customAuthMiddleware = async (
+  req: NextRequest,
+  event: NextFetchEvent
+): Promise<Response | undefined> => {
   // Стандартная обработка с помощью authMiddleware
   const response = await authMiddleware({
     publicRoutes: ["/sign-in", "/sign-up"],
@@ -8,7 +12,7 @@ const customAuthMiddleware = async (req, event) => {
 
   // Ваша кастомная логика
   if (!response) {
-    const { user } = req.auth;
+    const { user } = req.auth.user;
     if (!user) {
       return new Response("Unauthorized", { status: 401 });
     }
